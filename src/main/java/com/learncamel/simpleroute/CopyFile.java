@@ -17,6 +17,7 @@ public class CopyFile {
                 public void configure() throws Exception {
 
                     from("file:data/input?noop=true")
+                            .log("Received message with body ${body}")
                             .to("file:data/output");
                 }
             });
